@@ -284,8 +284,8 @@ exportBut.grid(row=0, column=3, pady=5, padx=(0, 5))
 clearBut = ttk.Button(medFrame,text="Clear",command=clearInput)
 clearBut.grid(row=0,column=4,pady=5,padx=(0,5))
 
-clearBut = ttk.Button(medFrame,text="Clear",command=clearInput)
-clearBut.grid(row=0,column=4,pady=5,padx=(0,5))
+reportBut = ttk.Button(medFrame,text="Report Folder",command=openFolder)
+reportBut.grid(row=0,column=5,pady=5,padx=(0,5))
 
 treeFrame = ttk.Frame(frame)
 treeFrame.grid(row=2,column=0,padx=10,pady=10)
