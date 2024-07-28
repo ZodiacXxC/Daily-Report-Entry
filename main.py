@@ -15,6 +15,7 @@ import arabic_reshaper
 from bidi.algorithm import get_display
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import Paragraph, Spacer
+import os
 
 pdfmetrics.registerFont(TTFont('Arabic', 'Arial.ttf'))
 styles = getSampleStyleSheet()
@@ -213,7 +214,11 @@ def clearInput():
     for row in initial_data:
         treeview.insert('',END,values=(row[3],row[0],row[1],row[2]))
 
-
+def openFolder():
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    folder_name = "Reports"
+    folder_path = os.path.join(current_directory, folder_name)
+    os.startfile(folder_path)
 
 
 
@@ -275,6 +280,9 @@ updateBut.grid(row=0, column=2, pady=5, padx=(0, 5))
 
 exportBut = ttk.Button(medFrame, text="Export Report", command=export_report)
 exportBut.grid(row=0, column=3, pady=5, padx=(0, 5))
+
+clearBut = ttk.Button(medFrame,text="Clear",command=clearInput)
+clearBut.grid(row=0,column=4,pady=5,padx=(0,5))
 
 clearBut = ttk.Button(medFrame,text="Clear",command=clearInput)
 clearBut.grid(row=0,column=4,pady=5,padx=(0,5))
